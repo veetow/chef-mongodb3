@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-include_recipe 'mongodb3::package_repo'
+include_recipe 'mongodb3::package_repo' if node['mongodb3']['package']['configure_repo']
 
 # Install Mongos package
 install_package = %w(mongodb-org-shell mongodb-org-mongos mongodb-org-tools)
